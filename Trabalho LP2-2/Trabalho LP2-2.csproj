@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48A3E7E1-6F1E-4562-AC7E-5E4D87C4CE7D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trabalho_LP2_2</RootNamespace>
+    <AssemblyName>Trabalho LP2-2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AlphaBlendTextBox">
+      <HintPath>..\AlphaBlendTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="crOrcamento.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crOrcamento.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="crVendasVendedor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crVendasVendedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormReportOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportOrcamento.Designer.cs">
+      <DependentUpon>FormReportOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="crVenda.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crVenda.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAO\CarroOpcionalDAO.cs" />
+    <Compile Include="DAO\CarroMotorDAO.cs" />
+    <Compile Include="DAO\VendaMotorDAO.cs" />
+    <Compile Include="DAO\VendaOpcionalDAO.cs" />
+    <Compile Include="FormReportVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportVenda.Designer.cs">
+      <DependentUpon>FormReportVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportVendedor.Designer.cs">
+      <DependentUpon>FormReportVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\VendaMotor.cs" />
+    <Compile Include="Modelo\VendaOpcional.cs" />
+    <Compile Include="Venda\FormHistoricoVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\FormHistoricoVendedor.Designer.cs">
+      <DependentUpon>FormHistoricoVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\FormVendaCarro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\FormVendaCarro.Designer.cs">
+      <DependentUpon>FormVendaCarro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionario\FormAddFuncionariocs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionario\FormAddFuncionariocs.Designer.cs">
+      <DependentUpon>FormAddFuncionariocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\FuncionarioDAO.cs" />
+    <Compile Include="Modelo\Funcionario.cs" />
+    <Compile Include="Funcionario\FormFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionario\FormFuncionarios.Designer.cs">
+      <DependentUpon>FormFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Carro.cs" />
+    <Compile Include="CustomTextBox .cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomTextBox .Designer.cs">
+      <DependentUpon>CustomTextBox .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Cliente.cs" />
+    <Compile Include="DAO\OpcionalDAO.cs" />
+    <Compile Include="Opcionais\FormAddOpcionais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opcionais\FormAddOpcionais.Designer.cs">
+      <DependentUpon>FormAddOpcionais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Motor.cs" />
+    <Compile Include="Motor\FormGerenciaMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Motor\FormGerenciaMotor.Designer.cs">
+      <DependentUpon>FormGerenciaMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuCarros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuCarros.Designer.cs">
+      <DependentUpon>FormMenuCarros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuPesquisas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuPesquisas.Designer.cs">
+      <DependentUpon>FormMenuPesquisas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Motor\FormMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Motor\FormMotor.Designer.cs">
+      <DependentUpon>FormMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\CarroDAO.cs" />
+    <Compile Include="Carros\FormAddCarro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carros\FormAddCarro.Designer.cs">
+      <DependentUpon>FormAddCarro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Carros\FormGerenciaCarros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carros\FormGerenciaCarros.Designer.cs">
+      <DependentUpon>FormGerenciaCarros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Pessoa.cs" />
+    <Compile Include="DAO\ClienteDAO.cs" />
+    <Compile Include="DAO\MotorDAO.cs" />
+    <Compile Include="Opcionais\FormOpcionais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opcionais\FormOpcionais.Designer.cs">
+      <DependentUpon>FormOpcionais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Opcional.cs" />
+    <Compile Include="Modelo\Venda.cs" />
+    <Compile Include="DAO\VendaDAO.cs" />
+    <Compile Include="Venda\FormAddVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\FormAddVenda.Designer.cs">
+      <DependentUpon>FormAddVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\FormHistoricoCarros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\FormHistoricoCarros.Designer.cs">
+      <DependentUpon>FormHistoricoCarros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\FormHistoricoVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\FormHistoricoVenda.Designer.cs">
+      <DependentUpon>FormHistoricoVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda\FormVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda\FormVenda.Designer.cs">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Database.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\FormAddCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\FormAddCliente.Designer.cs">
+      <DependentUpon>FormAddCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\FormCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\FormCliente.Designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\LoginAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\LoginAdmin.Designer.cs">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Carros\FormAddCarro.resx">
+      <DependentUpon>FormAddCarro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carros\FormGerenciaCarros.resx">
+      <DependentUpon>FormGerenciaCarros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crOrcamento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crOrcamento.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crVendasVendedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crVendasVendedor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportOrcamento.resx">
+      <DependentUpon>FormReportOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crVenda.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crVenda.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomTextBox .resx">
+      <DependentUpon>CustomTextBox .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\FormAddCliente.resx">
+      <DependentUpon>FormAddCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportVenda.resx">
+      <DependentUpon>FormReportVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportVendedor.resx">
+      <DependentUpon>FormReportVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\FormHistoricoVendedor.resx">
+      <DependentUpon>FormHistoricoVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\FormVendaCarro.resx">
+      <DependentUpon>FormVendaCarro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionario\FormAddFuncionariocs.resx">
+      <DependentUpon>FormAddFuncionariocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionario\FormFuncionarios.resx">
+      <DependentUpon>FormFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Motor\FormGerenciaMotor.resx">
+      <DependentUpon>FormGerenciaMotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuCarros.resx">
+      <DependentUpon>FormMenuCarros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuPesquisas.resx">
+      <DependentUpon>FormMenuPesquisas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Motor\FormMotor.resx">
+      <DependentUpon>FormMotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\LoginAdmin.resx">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opcionais\FormAddOpcionais.resx">
+      <DependentUpon>FormAddOpcionais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opcionais\FormOpcionais.resx">
+      <DependentUpon>FormOpcionais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\FormAddVenda.resx">
+      <DependentUpon>FormAddVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\FormHistoricoCarros.resx">
+      <DependentUpon>FormHistoricoCarros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\FormHistoricoVenda.resx">
+      <DependentUpon>FormHistoricoVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda\FormVenda.resx">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\DataSources\Carro.datasource" />
+    <None Include="Properties\DataSources\Cliente.datasource" />
+    <None Include="Properties\DataSources\Funcionario.datasource" />
+    <None Include="Properties\DataSources\Motor.datasource" />
+    <None Include="Properties\DataSources\Opcional.datasource" />
+    <None Include="Properties\DataSources\Venda.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Oxygen-Icons.org-Oxygen-Actions-user-group-new.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cars.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fasticon-Shop-Cart-Shop-cart-add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart-2-multi-size.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-button-clipart-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\si-search-grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\srch22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\srch221.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Audicenter-Vitoria-Int-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginfundo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginfundo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginfundo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginbg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redbutton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redbutton2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgmenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgmenu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer %281%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer %281%293.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons9-car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgmenucarros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons9-car1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-admin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-return-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-return-401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgmenucarros1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgmenucarros2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-return-402.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgMenuPesquisar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bglogin2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bglogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bglogin21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgMenuHistorico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bglogin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgmenu2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgmenucarros3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-permanent-job-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-permanent-job-801.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-permanent-job-802.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgmenucarros4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bglogin3.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
