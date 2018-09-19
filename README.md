@@ -1,2 +1,2 @@
 # ProjetoLP2-2017
-Entrega do projeto de Lp2
+Sistema para concessionária em C# seguindo os padrões MVC e DAO
